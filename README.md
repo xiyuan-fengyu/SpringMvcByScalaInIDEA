@@ -1,0 +1,3 @@
+# SpringMvcByScalaInIDEA
+
+采用Scala开发SpringmVC项目,通过maven管理依赖
