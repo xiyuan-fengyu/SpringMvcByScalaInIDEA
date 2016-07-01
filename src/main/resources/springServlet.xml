@@ -25,13 +25,7 @@
 		http://www.springframework.org/schema/task/spring-task-4.3.xsd
 		">
 
-	<context:annotation-config />
-	<mvc:annotation-driven />
-	<mvc:default-servlet-handler />
-	
-	<!-- 设置扫描@Controller,@Component等注解的目录 -->
-	<context:component-scan base-package="com.xiyuan" />
-
+	<!--配置jsp的解析器, view的路径-->
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 		<property name="viewClass"
@@ -49,13 +43,8 @@
 	<!-- 异常处理类 -->
 	<bean id="exceptionResolver"
 		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
-		<property name="defaultErrorView">
-			<value>error/error</value>
-		</property>
 		<property name="exceptionMappings">
 			<props>
-				<prop key="java.sql.SQLException">error/error</prop>
-				<prop key="java.lang.RuntimeException">error/error</prop>
 				<prop key="org.apache.shiro.authz.UnauthorizedException">error/noPermission</prop>
 			</props>
 		</property>

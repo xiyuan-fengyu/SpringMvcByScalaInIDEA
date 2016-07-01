@@ -32,11 +32,10 @@ class TestController {
     result("success") = true
     result("message") = "test"
 
-    val list = dao.all(classOf[TestBo])
-    result("list") = list
+    result("list") = dao.all(classOf[TestBo])
 
-    val data = dao.find(1L, classOf[TestBo])
-    result("data") = data
+    result("data") = dao.find(1L, classOf[TestBo])
+
     result
   }
 
@@ -44,6 +43,37 @@ class TestController {
   @ResponseBody
   def testStr(): String = {
     "Hello, scala!"
+  }
+
+  @RequestMapping(value = Array("/test/update"))
+  @ResponseBody
+  def testUpdate(id: Long): String = {
+    val item = dao.find(id, classOf[TestBo])
+    if (item != null) {
+      item.setName("new name")
+      dao.update(item)
+    }
+    "update!"
+  }
+
+  @RequestMapping(value = Array("/test/delete"))
+  @ResponseBody
+  def testDelete(id: Long): String = {
+    val item = dao.find(id, classOf[TestBo])
+    if (item != null) {
+      dao.delete(item)
+    }
+    "delete!"
+  }
+
+  @RequestMapping(value = Array("/test/insert"))
+  @ResponseBody
+  def testInsert(): String = {
+    val newItem = new TestBo
+    newItem.setName("1L")
+    newItem.setContent("1L")
+    dao.insert(newItem)
+    "insert!"
   }
 
 }
