@@ -42,16 +42,16 @@
 		</property>
 	</bean>
 	<bean id="MySqlDataSource" class="org.apache.commons.dbcp.BasicDataSource">
-		<property name="driverClassName" value="${ds.driver}"></property>
+		<property name="driverClassName" value="${ds.driver}"/>
 		<property name="url"
 			value="${ds.url}">
 		</property>
 
-		<property name="username" value="${ds.username}"></property>
-		<property name="password" value="${ds.password}"></property>
+		<property name="username" value="${ds.username}"/>
+		<property name="password" value="${ds.password}"/>
 
-		<property name="validationQuery" value="select 1 from dual"></property>
-		<property name="testOnBorrow" value="true"></property>
+		<property name="validationQuery" value="select 1 from dual"/>
+		<property name="testOnBorrow" value="true"/>
 	</bean>
 	<!-- 配置数据源结束 -->
 
