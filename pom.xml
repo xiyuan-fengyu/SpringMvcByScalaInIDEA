@@ -12,9 +12,9 @@
     <packaging>war</packaging>
 
     <properties>
-        <scalaVersion>2.11.4</scalaVersion>
-        <scalaVersionPrefix>2.11</scalaVersionPrefix>
-        <scalaXmlVersion>1.0.5</scalaXmlVersion>
+        <scala.version>2.11.4</scala.version>
+        <scala.version.prefix>2.11</scala.version.prefix>
+        <scala.xml.version>1.0.5</scala.xml.version>
 
         <spring.version>4.3.0.RELEASE</spring.version>
         <slf4j.version>1.5.10</slf4j.version>
@@ -26,18 +26,18 @@
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-compiler</artifactId>
-            <version>${scalaVersion}</version>
+            <version>${scala.version}</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-library</artifactId>
-            <version>${scalaVersion}</version>
+            <version>${scala.version}</version>
         </dependency>
         <dependency>
             <groupId>org.scala-lang.modules</groupId>
-            <artifactId>scala-xml_${scalaVersionPrefix}</artifactId>
-            <version>${scalaXmlVersion}</version>
+            <artifactId>scala-xml_${scala.version.prefix}</artifactId>
+            <version>${scala.xml.version}</version>
         </dependency>
         <!--scala end-->
 
