@@ -42,19 +42,19 @@ object JsonObjectExt {
                 jsonElement
               }
               else {
-                jsonObject.add(key, JsonNull.INSTANCE)
+                jsonObject.add(key, null)
                 null
               }
             }
             catch {
               case e: Exception =>
-                jsonObject.add(key, JsonNull.INSTANCE)
+                jsonObject.add(key, null)
                 null
             }
         }
       }
       else {
-        jsonObject.add(key, JsonNull.INSTANCE)
+        jsonObject.add(key, null)
         null
       }
     }
