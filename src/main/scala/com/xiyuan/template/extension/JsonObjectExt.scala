@@ -1,6 +1,6 @@
 package com.xiyuan.template.extension
 
-import com.google.gson.{Gson, JsonElement, JsonObject}
+import com.google.gson.{JsonNull, Gson, JsonElement, JsonObject}
 
 /**
   * 对JsonObject进行扩展，可以方便的使用jsonObjec(key)获取值，通过jsonObjec(key) = newValue来更新值
@@ -42,16 +42,19 @@ object JsonObjectExt {
                 jsonElement
               }
               else {
+                jsonObject.add(key, JsonNull.INSTANCE)
                 null
               }
             }
             catch {
               case e: Exception =>
+                jsonObject.add(key, JsonNull.INSTANCE)
                 null
             }
         }
       }
       else {
+        jsonObject.add(key, JsonNull.INSTANCE)
         null
       }
     }
